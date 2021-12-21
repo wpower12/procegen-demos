@@ -1,0 +1,18 @@
+{
+  "name": "procgen",
+  "version": "1.0.0",
+  "description": "Demos for various procedural generation techs.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wpower12",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.6",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
