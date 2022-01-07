@@ -26,7 +26,7 @@ function defineMaxGrid(canvas, cell_size){
 	canvas.style.width = "100%";
 	canvas.width = canvas.offsetWidth;
 	let X = Math.floor(canvas.width/cell_size);
-    let Y = Math.floor(canvas.height/cell_size);
+  let Y = Math.floor(canvas.height/cell_size);
 	return { 'X': X, 'Y': Y,
 			 'os_x': (canvas.width-X*cell_size)/2,
 			 'os_y': (canvas.height-Y*cell_size)/2 };
@@ -70,9 +70,9 @@ function generateHallways(rooms, grid){
 			// randomly pick a room and make a hallway to it.
 			var to_room = connected[Math.floor(Math.random()*connected.length)];
 			let mp1 = {'x': Math.floor(room.x+(room.w/2)),
-					   'y': Math.floor(room.y+(room.h/2))};
+					       'y': Math.floor(room.y+(room.h/2))};
 			let mp2 = {'x': Math.floor(to_room.x+(to_room.w/2)), 
-					   'y': Math.floor(to_room.y+(to_room.h/2))};
+					       'y': Math.floor(to_room.y+(to_room.h/2))};
 			hallways.push(findPath(mp1, mp2, grid));
 		} 
 		connected.push(room);
@@ -85,9 +85,9 @@ function adjacentNodes(p, grid){
 	let neighbors = [];
 	deltas.forEach(function(d){
 		if( d[0]+p.x > 0 && 
-			d[0]+p.x < grid.X &&
-			d[1]+p.y > 0 && 
-			d[1]+p.y < grid.Y ){
+  			d[0]+p.x < grid.X &&
+  			d[1]+p.y > 0 && 
+  			d[1]+p.y < grid.Y ){
 			neighbors.push({
 				'x': d[0]+p.x,
 				'y': d[1]+p.y
@@ -181,7 +181,7 @@ function intersect(rect1, rect2){
 
 // from: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
+  let currentIndex = array.length, randomIndex;
 
   // While there remain elements to shuffle...
   while (currentIndex != 0) {

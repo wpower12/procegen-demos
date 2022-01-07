@@ -19,3 +19,19 @@ section {
 .btn-blue:hover {
 	@apply bg-blue-700;
 }
+
+a {
+	@apply underline;
+}
+
+li {
+	@apply p-2
+}
+
+h3 {
+	@apply font-bold;
+}
+
+.demo-input {
+	@apply flex flex-col;
+}

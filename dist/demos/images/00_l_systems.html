@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>L Systems</title>
+	<link href="/style/main.css" rel="stylesheet">
+</head>
+
+<body>
+<section>
+	<canvas id="cnv" height="500"></canvas>
+	
+	<div class="demo-input">
+		<label for="rules">Rules</label>
+		<textarea  id="rules" name="rules" class="font-mono">
+0: 1[0]0
+1: 11</textarea>
+	</div>
+
+	<div class="demo-input">
+		<label for="num_iters">Iterations</label>
+		<input type="range" id="num_iters" name="num_iters" min="1" max="8" step="1" value="3">
+	</div>
+
+	<div class="demo-input">
+		<label for="line_len">Line Length</label>
+		<input type="range" id="line_len" name="line_len" min="1" max="20" step="1" value="10">
+	</div>
+
+	<div class="demo-input">
+		<label for="line_w">Line Width</label>
+		<input type="range" id="line_w" name="line_w" min="1" max="5" step="1" value="3">
+	</div>
+
+	<div class="demo-input">
+		<label for="angle">Angle</label>
+		<input type="range" id="angle" name="angle" min="0" max="180" step="5" value="45">
+	</div>
+
+	<div class="demo-input">
+		<label for="rand_mag">Random Deviation</label>
+		<input type="range" id="rand_mag" name="rand_mag" min="0" max="20" step="2" value="0">
+	</div>
+
+</section>
+<section>
+	<h2>L Systems</h2>
+</section>
+</body>
+
+<footer>
+	<script type="text/javascript" src="../../js/images_00_l_systems.bundle.js"></script>
+</footer>
+</html>
