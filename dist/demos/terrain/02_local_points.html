@@ -47,7 +47,16 @@
 
 </section>
 <section>
-	<h2>Local Min and Max</h2>
+	<h2 class="font-bold">Local Min and Max</h2>
+	<h4 class="font-mono"><a href="https://github.com/wpower12/procegen-demos/blob/master/src/js/terrain/02_local_points.js">src</a></h3>
+
+	<p>One way to generate 'smooth' locations for spawns, in that they dont overlap much, is to look for local minimums and maxmimums on a noise surface.</p>
+	<br>
+	<p>In this example, locations are found by checking if a cell is a local min/max. This is done in a rather naive way, by simply looking at the values for each of the 8 adjacent cells each time a cell is painted to the map. If the value is smaller or larger than all its neighbors, its added as a 'rare spawn' location in yellow.</p>
+	<br>
+	<p>The scaling parameter for the new 'rare spawn' noise surface is exposed in a new control. The rough shape of the surface can been seen in the minimap in the lower right hand corner of the canvas. This shows a scaled down image of the noise surface, from which the local min/max of each cell is checked. 
+	</p>
+
 </section>
 </body>
 

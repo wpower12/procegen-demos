@@ -6,7 +6,7 @@ const in_rand_mag  = document.getElementById("rand_mag");
 const in_angle     = document.getElementById("angle");
 
 const cnv = document.getElementById("cnv");
-cnv.style.width = "100%";  // do this outside of Turtle.
+cnv.style.width = "100%"; 
 cnv.width = cnv.offsetWidth;
 
 
@@ -28,8 +28,8 @@ class Turtle {
 	constructor(canvas){
 		this.ctx = canvas.getContext('2d');
 		this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-		this.x   = canvas.width/2;
-		this.y   = canvas.height;
+		this.x = canvas.width/2;
+		this.y = canvas.height;
 		this.facing = 180;
 	}
 
@@ -38,7 +38,6 @@ class Turtle {
 	right(amt){ this.facing += amt; }
 
 	stroke(dist){
-		// p1 is the current x,y, need p2. 
 		let dx = dist*Math.sin((this.facing/360)*2*Math.PI);
 		let dy = dist*Math.cos((this.facing/360)*2*Math.PI);
 		
@@ -57,8 +56,7 @@ class Turtle {
 		this.ctx.arc(this.x, 
 			this.y, 
 			parseInt(in_line_w.value), 
-			0, 
-			2*Math.PI);
+			0, 2*Math.PI);
 		this.ctx.fillStyle = "green";
 		this.ctx.fill();
 	}

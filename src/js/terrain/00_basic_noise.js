@@ -25,10 +25,10 @@ function defineMaxGrid(canvas, cell_size){
 	canvas.style.width = "100%";
 	canvas.width = canvas.offsetWidth;
 	let X = Math.floor(canvas.width/cell_size);
-    let Y = Math.floor(canvas.height/cell_size);
+	let Y = Math.floor(canvas.height/cell_size);
 	return { 'X': X, 'Y': Y,
-			 'os_x': (canvas.width-X*cell_size)/2,
-			 'os_y': (canvas.height-Y*cell_size)/2 };
+		'os_x': (canvas.width-X*cell_size)/2,
+		'os_y': (canvas.height-Y*cell_size)/2 };
 }
 
 // Draws the 'grid' by just drawing a square with cell_size-2 sides
@@ -38,8 +38,8 @@ function drawGrid(c, grid, cell_size){
 		for (var j = 0; j < grid.Y; j++) {
 			c.fillStyle = 'grey';
 			c.fillRect(grid.os_x+i*cell_size+1, 
-					   grid.os_y+j*cell_size+1,
-						cell_size-2, cell_size-2);
+				grid.os_y+j*cell_size+1,
+				cell_size-2, cell_size-2);
 		}
 	}
 }
@@ -51,7 +51,7 @@ function fillTerrain(ctx, grid, cell_size, simplex){
 	for (var i = 0; i < grid.X; i++) {
 		for (var j = 0; j < grid.Y; j++) {		
 			let v = simplex.noise2D(i*input_scale.value, 
-									j*input_scale.value);
+				j*input_scale.value);
 			let color = "blue";
 			if( v > input_sea_lvl.value){
 				color = "green";
@@ -67,7 +67,7 @@ function fillTerrain(ctx, grid, cell_size, simplex){
 function fillCell(ctx, grid, cell_size, x, y, color){
 	ctx.fillStyle = color;
 	ctx.fillRect(grid.os_x+x*cell_size+1, 
-					     grid.os_y+y*cell_size+1,
-						   cell_size-2, 
-						   cell_size-2);
+		grid.os_y+y*cell_size+1,
+		cell_size-2, 
+		cell_size-2);
 }

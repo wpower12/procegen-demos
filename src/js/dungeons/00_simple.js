@@ -26,10 +26,10 @@ function defineMaxGrid(canvas, cell_size){
 	canvas.style.width = "100%";
 	canvas.width = canvas.offsetWidth;
 	let X = Math.floor(canvas.width/cell_size);
-  let Y = Math.floor(canvas.height/cell_size);
+	let Y = Math.floor(canvas.height/cell_size);
 	return { 'X': X, 'Y': Y,
-			 'os_x': (canvas.width-X*cell_size)/2,
-			 'os_y': (canvas.height-Y*cell_size)/2 };
+		'os_x': (canvas.width-X*cell_size)/2,
+		'os_y': (canvas.height-Y*cell_size)/2 };
 }
 
 // Return a list of non-overlapping rectangles, representing rooms. 
@@ -70,9 +70,9 @@ function generateHallways(rooms, grid){
 			// randomly pick a room and make a hallway to it.
 			var to_room = connected[Math.floor(Math.random()*connected.length)];
 			let mp1 = {'x': Math.floor(room.x+(room.w/2)),
-					       'y': Math.floor(room.y+(room.h/2))};
+				'y': Math.floor(room.y+(room.h/2))};
 			let mp2 = {'x': Math.floor(to_room.x+(to_room.w/2)), 
-					       'y': Math.floor(to_room.y+(to_room.h/2))};
+				'y': Math.floor(to_room.y+(to_room.h/2))};
 			hallways.push(findPath(mp1, mp2, grid));
 		} 
 		connected.push(room);
@@ -85,9 +85,9 @@ function adjacentNodes(p, grid){
 	let neighbors = [];
 	deltas.forEach(function(d){
 		if( d[0]+p.x > 0 && 
-  			d[0]+p.x < grid.X &&
-  			d[1]+p.y > 0 && 
-  			d[1]+p.y < grid.Y ){
+			d[0]+p.x < grid.X &&
+			d[1]+p.y > 0 && 
+			d[1]+p.y < grid.Y ){
 			neighbors.push({
 				'x': d[0]+p.x,
 				'y': d[1]+p.y
@@ -136,8 +136,8 @@ function drawGrid(c, grid, cell_size){
 		for (var j = 0; j < grid.Y; j++) {
 			c.fillStyle = 'grey';
 			c.fillRect(grid.os_x+i*cell_size+1, 
-					   grid.os_y+j*cell_size+1,
-						cell_size-2, cell_size-2);
+				grid.os_y+j*cell_size+1,
+				cell_size-2, cell_size-2);
 		}
 	}
 }
@@ -147,8 +147,8 @@ function drawHallways(ctx, halls, grid, cell_size){
 		cells.forEach(function(cell){
 			ctx.fillStyle = 'black';
 			ctx.fillRect(grid.os_x+cell.x*cell_size+1,
-						 grid.os_y+cell.y*cell_size+1,
-						 cell_size-2, cell_size-2);
+				grid.os_y+cell.y*cell_size+1,
+				cell_size-2, cell_size-2);
 		})
 	});
 }
@@ -157,9 +157,9 @@ function drawRooms(ctx, rooms, grid, cell_size){
 	ctx.fillStyle = "lightblue";
 	rooms.forEach(function(room){
 		ctx.fillRect(grid.os_x+room.x*cell_size,
-					 grid.os_y+room.y*cell_size,
-					 room.w*cell_size,
-					 room.h*cell_size);
+			grid.os_y+room.y*cell_size,
+			room.w*cell_size,
+			room.h*cell_size);
 	});
 }
 

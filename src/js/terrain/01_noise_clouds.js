@@ -46,7 +46,7 @@ function drawClouds(ctx, cloud_grid, cloud_z, cloud_scale, simplex){
 			if(v > input_cloud_thresh.value){
 				ctx.fillStyle = `rgba(200, 200, 255, ${v})`;
 				ctx.fillRect(cloud_grid.os_x+i*input_cloud_cellsize.value, 
-				    cloud_grid.os_y+j*input_cloud_cellsize.value,
+					cloud_grid.os_y+j*input_cloud_cellsize.value,
 					input_cloud_cellsize.value, 
 					input_cloud_cellsize.value);
 			}
@@ -61,7 +61,7 @@ function defineMaxGrid(canvas, cell_size){
 	canvas.style.width = "100%";
 	canvas.width = canvas.offsetWidth;
 	let X = Math.floor(canvas.width/cell_size);
-    let Y = Math.floor(canvas.height/cell_size);
+	let Y = Math.floor(canvas.height/cell_size);
 	return { 'X': X, 
 		'Y': Y,
 		'os_x': (canvas.width-X*cell_size)/2,
@@ -75,7 +75,7 @@ function drawGrid(c, grid, cell_size){
 		for (var j = 0; j < grid.Y; j++) {
 			c.fillStyle = 'grey';
 			c.fillRect(grid.os_x+i*cell_size+1, 
-		   		grid.os_y+j*cell_size+1,
+				grid.os_y+j*cell_size+1,
 				cell_size-2, 
 				cell_size-2);
 		}
@@ -105,7 +105,7 @@ function fillTerrain(ctx, grid, cell_size, simplex){
 function fillCell(ctx, grid, cell_size, x, y, color){
 	ctx.fillStyle = color;
 	ctx.fillRect(grid.os_x+x*cell_size+1, 
-					     grid.os_y+y*cell_size+1,
-						   cell_size-2, 
-						   cell_size-2);
+		grid.os_y+y*cell_size+1,
+		cell_size-2, 
+		cell_size-2);
 }
